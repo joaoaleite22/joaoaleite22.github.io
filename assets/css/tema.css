@@ -1,15 +1,118 @@
-*{
-    background-color: #484848;
+/* ---------- Variáveis (cores do wireframe) ---------- */
+:root {
+  --preto: #1e1e1e;
+  --laranja: #f08c00;
+  --amarelo: #fde99a;
+  --texto: #1e1e1e;
 }
 
-h1 {
-    color:darkred;
-}
-
-h1:hover{
-    color: firebrick;
+/* ---------- Reset básico ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    align-items: center;
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  background-color: beige;
+  color: var(--texto);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Barra de navegação ---------- */
+.navbar {
+  background: var(--preto);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 40px;
+  border-radius: 0 0 16px 16px;
+}
+
+.logo {
+  color: var(--laranja);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#menu {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-link {
+  color: var(--laranja);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.nav-link:focus-visible {
+  outline: 3px solid var(--laranja);
+  outline-offset: 3px;
+}
+
+/* ---------- Home ---------- */
+#home {
+  flex: 1;
+  display: flex;
+  padding: 16px;
+}
+
+.home-container {
+  flex: 1;
+  background: var(--amarelo);
+  border-radius: 16px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 32px;
+  padding: 40px 20px;
+}
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.home-text h1 {
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+}
+
+.home-text p {
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  max-width: 28ch;
+}
+
+.home-container img {
+  width: 300px;
+  height: auto;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 560px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  #menu {
+    gap: 18px;
+  }
 }
