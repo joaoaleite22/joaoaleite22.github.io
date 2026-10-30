@@ -20,4 +20,8 @@ describe('Operações matemáticas', () => {
   test('deve lançar erro ao dividir por zero', () => {
     expect(() => dividir(10, 0)).toThrow('Divisão por zero não é permitida.');
   });
+
+  test('calcula a potencia de um numero com o outro', () => {
+    expect(potencia(2, 3)).toBe(8);
+  });
 });
